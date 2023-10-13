@@ -32,6 +32,7 @@
 <script>
 import { mapActions, mapState } from 'vuex'
 export default {
+    // middleware: 'auth',
     data() {
         return {
             formArticle: {
@@ -44,7 +45,6 @@ export default {
         }
     },
     mounted() {
-        // this.setInitialUpload();
     },
     computed: {
         // ...mapState('storage', ['images', 'image'])

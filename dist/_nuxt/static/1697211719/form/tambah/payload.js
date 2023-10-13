@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/form/tambah", {data:[{}],fetch:{},mutations:[]});

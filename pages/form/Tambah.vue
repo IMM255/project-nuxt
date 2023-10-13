@@ -22,9 +22,9 @@
 </template>
 
 <script>
-import { mapActions, mapState } from 'vuex'
+import { mapActions } from 'vuex'
 export default {
-  middleware: 'auth',
+      // middleware: 'auth',
     data() {
         return {
             formArticle: {
@@ -35,14 +35,13 @@ export default {
         }
     },
     mounted() {
-        // this.setInitialUpload();
+
     },
     computed: {
-        ...mapState('storage', ['images', 'image'])
     },
     methods: {
         ...mapActions('articles', ['storeArticle']),
-        ...mapActions('storage', ['uploadFile']),
+        // ...mapActions('storage', ['uploadFile']),
         async onSubmit() {
             try {
                 await this.storeArticle(this.formArticle);
@@ -53,17 +52,17 @@ export default {
                 console.error(error)
             }
         },
-        async upload() {
-            try {
-                const formData = new FormData();
-                const file = document.querySelector("input[type=file]");
-                formData.append('data-binary', file);
-                await this.uploadFile({ file: `images/${Date.now()}`, body: formData, })
-                this.formArticle.image.push(this.image)
-            } catch (error) {
-                console.error(error)
-            }
-        }
+        // async upload() {
+        //     try {
+        //         const formData = new FormData();
+        //         const file = document.querySelector("input[type=file]");
+        //         formData.append('data-binary', file);
+        //         await this.uploadFile({ file: `images/${Date.now()}`, body: formData, })
+        //         this.formArticle.image.push(this.image)
+        //     } catch (error) {
+        //         console.error(error)
+        //     }
+        // }
     }
 }
 </script>

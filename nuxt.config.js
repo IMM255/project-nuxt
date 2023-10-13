@@ -62,4 +62,5 @@ export default {
   build: {
     transpile: ['vuetify/lib', "tiptap-vuetify"]
   },
+  target: 'static'
 }
